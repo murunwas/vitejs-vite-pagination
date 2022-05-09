@@ -3,7 +3,7 @@ import data from './data.json';
 
 const store = writable([]);
 const currentPage = writable(1);
-export const pageSize = writable(5);
+export const pageSize = writable(10);
 
 store.set(data);
 
