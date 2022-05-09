@@ -28,12 +28,12 @@ export const paginate = derived(
 );
 
 export const next = () => {
-  let mm = get(currentPage);
+  let currPage = get(currentPage);
   let len = get(store).length;
   let pSize = get(pageSize);
   let totalPages = Math.ceil(len / pSize);
-  if (mm == totalPages) return;
-  currentPage.set(++mm);
+  if (currPage == totalPages) return;
+  currentPage.set(++currPage);
 };
 
 export const goTo = (page) => {
@@ -41,7 +41,7 @@ export const goTo = (page) => {
 };
 
 export const back = () => {
-  let mm = get(currentPage);
-  if (mm <= 1) return;
-  currentPage.set(--mm);
+  let currPage = get(currentPage);
+  if (currPage <= 1) return;
+  currentPage.set(--currPage);
 };
