@@ -2,12 +2,11 @@
 import {paginate,next,back,pageSize,goTo} from "./lib"
 import Pagination from "./lib/Pagination.svelte"
 
-$:pages=Array.from({length:$paginate.totalPages}, (v, i) => ((i+1)));
 </script>
 
 <div class="flex gap-2 p-4">
     <Pagination 
-    {pages} 
+    pages={$paginate.pages} 
     currentPage={$paginate.currentPage}
     on:goto={({detail})=>goTo(detail)}
     on:next={next}

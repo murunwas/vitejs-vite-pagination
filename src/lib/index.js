@@ -23,6 +23,7 @@ export const paginate = derived(
       total: $store.length,
       disableNext: $currentPage == totalPages,
       disableBack: $currentPage == 1,
+      pages: Array.from({ length: totalPages }, (v, i) => i + 1),
     };
   }
 );
